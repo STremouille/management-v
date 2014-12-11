@@ -253,7 +253,7 @@ public class CaseForEmployeeEditor extends JFrame {
 //				c.setPaymentDueDate((int)(new Date(0).getTime()/10000));
 //			c.setAmountTaxFree(Double.valueOf(amountTaxFree.getText()));
 //			c.setAmountWithTax(Double.valueOf(amountWithTax.getText()));
-			c.setDailyRate(Double.valueOf(dailyRate.getText()));
+			c.setDailyRate(String.valueOf(dailyRate.getText()));
 			c.setDailyIndemnity(dailyIndemnity.getText());
 			c.setOtherConditions(otherConditions.getText());
 			c.setCountry(country.getText());

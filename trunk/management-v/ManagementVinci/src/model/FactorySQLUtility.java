@@ -168,7 +168,7 @@ public class FactorySQLUtility {
 							this.rs = stmt.executeQuery(requestCases);
 							while(rs.next()){
 								int employeeId = rs.getInt(2);
-								Case c = new Case(rs.getInt(1),rs.getDouble(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getDouble(14),rs.getDouble(15),rs.getDouble(16),rs.getString(17),rs.getString(18));
+								Case c = new Case(rs.getInt(1),rs.getDouble(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getDouble(14),rs.getDouble(15),rs.getString(16),rs.getString(17),rs.getString(18));
 								Iterator<Employee> it = cacheGetEmployeeListCache.iterator();
 								while(it.hasNext()){
 									Employee tmp = it.next();
@@ -277,7 +277,7 @@ public class FactorySQLUtility {
 								rs.getString(rs.findColumn("PROJECT")),
 								rs.getDouble(rs.findColumn("AMOUNTTAXFREE")),
 								rs.getDouble(rs.findColumn("AMOUNTWITHTAX")),
-								rs.getDouble(rs.findColumn("DAILYRATE")),
+								rs.getString(rs.findColumn("DAILYRATE")),
 								rs.getString(rs.findColumn("DAILYINDEMNITY")),
 								rs.getString(rs.findColumn("COUNTRY")));
 						//Case c = new Case(-1,rs.getDouble(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(1),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getDouble(12),rs.getDouble(13),rs.getDouble(14),rs.getDouble(15));
@@ -316,7 +316,7 @@ public class FactorySQLUtility {
 								rs.getString(rs.findColumn("PROJECT")),
 								rs.getDouble(rs.findColumn("AMOUNTTAXFREE")),
 								rs.getDouble(rs.findColumn("AMOUNTWITHTAX")),
-								rs.getDouble(rs.findColumn("DAILYRATE")),
+								rs.getString(rs.findColumn("DAILYRATE")),
 								rs.getString(rs.findColumn("DAILYINDEMNITY")),
 								rs.getString(rs.findColumn("COUNTRY")));
 						//Case c = new Case(rs.getInt(1),rs.getDouble(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getDouble(14),rs.getDouble(15),rs.getDouble(16),rs.getDouble(17));
@@ -519,7 +519,7 @@ public class FactorySQLUtility {
 			try {
 				this.rs = stmt.executeQuery(sql);
 				while(rs.next()){
-					Case c = new Case(rs.getInt(1),rs.getDouble(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getDouble(14),rs.getDouble(15),rs.getDouble(16),rs.getString(17),rs.getString(rs.findColumn("COUNTRY")));
+					Case c = new Case(rs.getInt(1),rs.getDouble(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getDouble(14),rs.getDouble(15),rs.getString(16),rs.getString(17),rs.getString(rs.findColumn("COUNTRY")));
 					result.add(c);
 				}
 			} catch (SQLException e1) {
@@ -786,7 +786,7 @@ public class FactorySQLUtility {
 								rs.getString(rs.findColumn("PROJECT")),
 								rs.getDouble(rs.findColumn("AMOUNTTAXFREE")),
 								rs.getDouble(rs.findColumn("AMOUNTWITHTAX")),
-								rs.getDouble(rs.findColumn("DAILYRATE")),
+								rs.getString(rs.findColumn("DAILYRATE")),
 								rs.getString(rs.findColumn("DAILYINDEMNITY")),
 								rs.getString(rs.findColumn("COUNTRY")));
 						res.add(e);
@@ -867,7 +867,7 @@ public class FactorySQLUtility {
 							rs.getString(rs.findColumn("PROJECT")),
 							rs.getDouble(rs.findColumn("AMOUNTTAXFREE")),
 							rs.getDouble(rs.findColumn("AMOUNTWITHTAX")),
-							rs.getDouble(rs.findColumn("DAILYRATE")),
+							rs.getString(rs.findColumn("DAILYRATE")),
 							rs.getString(rs.findColumn("DAILYINDEMNITY")),
 							rs.getString(rs.findColumn("COUNTRY")),
 							Boolean.valueOf(rs.getString(rs.findColumn("HISTORISE"))));
@@ -902,7 +902,7 @@ public class FactorySQLUtility {
 							rs.getString(rs.findColumn("PROJECT")),
 							rs.getDouble(rs.findColumn("AMOUNTTAXFREE")),
 							rs.getDouble(rs.findColumn("AMOUNTWITHTAX")),
-							rs.getDouble(rs.findColumn("DAILYRATE")),
+							rs.getString(rs.findColumn("DAILYRATE")),
 							rs.getString(rs.findColumn("DAILYINDEMNITY")),
 							rs.getString(rs.findColumn("COUNTRY")));
 					//Case c = new Case(rs.getInt(1),rs.getDouble(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getDouble(14),rs.getDouble(15),rs.getDouble(16),rs.getDouble(17));

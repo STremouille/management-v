@@ -281,7 +281,7 @@ public class MainController {
 				updateEmployeeList();
 				break;
 			case 2:
-				factory.insertCase(new Case(-1,0.0,0,0,0,0,"NOUVELLE AFFAIRE "+(factory.getCases("").size()+1)+"","","","","","",0.0,0.0,0.0,"0.0",""), null);
+				factory.insertCase(new Case(-1,0.0,0,0,0,0,"NOUVELLE AFFAIRE "+(factory.getCases("").size()+1)+"","","","","","",0.0,0.0,"0.0","0.0",""), null);
 				updateCaseList();
 				break;
 			default:

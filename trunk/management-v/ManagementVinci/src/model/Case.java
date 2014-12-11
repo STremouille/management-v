@@ -7,7 +7,8 @@ public class Case {
 	Double numberOfDayInvoice;
 	private String number,client,positon,status,otherConditions,project,country,dailyIndemnity;
 	private int startDate,endDate,paymentDate,paymentDueDate;
-	private Double amountTaxFree,amountWithTax,dailyRate;
+	private Double amountTaxFree,amountWithTax;
+	String dailyRate;
 	private boolean historised;
 	
 	private int eRef;
@@ -18,7 +19,7 @@ public class Case {
 			int paymentDueDate, String number, String client,
 			String positon, String status, String otherConditions,
 			String project,  Double amountTaxFree, Double amountWithTax,
-			Double dailyRate, String dailyIndemnity,String country) {
+			String dailyRate, String dailyIndemnity,String country) {
 		super();
 		this.id = id;
 		this.numberOfDayInvoice = numberOfDayInvoice;
@@ -50,7 +51,7 @@ public class Case {
 			int paymentDueDate, String number, String client,
 			String positon, String status, String otherConditions,
 			String project,  Double amountTaxFree, Double amountWithTax,
-			Double dailyRate, String dailyIndemnity,String country,
+			String dailyRate, String dailyIndemnity,String country,
 			boolean historised) {
 		super();
 		this.id = id;
@@ -159,11 +160,11 @@ public class Case {
 	public void setAmountWithTax(Double amountWithTax) {
 		this.amountWithTax = amountWithTax;
 	}
-	public Double getDailyRate() {
+	public String getDailyRate() {
 		return dailyRate;
 	}
-	public void setDailyRate(Double dailyRate) {
-		this.dailyRate = dailyRate;
+	public void setDailyRate(String string) {
+		this.dailyRate = string;
 	}
 	public String getDailyIndemnity() {
 		return dailyIndemnity;

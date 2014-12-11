@@ -225,7 +225,7 @@ public class CaseTableModel extends AbstractTableModel {
 				cList.get(rowIndex).setNumberOfDayInvoice((Double) aValue);
 				break;*/
 			case 7:
-				cList.get(rowIndex).setDailyRate((Double) aValue);
+				cList.get(rowIndex).setDailyRate((String) aValue);
 				break;
 			case 8:
 				cList.get(rowIndex).setDailyIndemnity(aValue.toString());
