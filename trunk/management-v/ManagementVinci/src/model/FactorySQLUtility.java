@@ -240,8 +240,8 @@ public class FactorySQLUtility {
 			refreshCache();
 			System.out.println("INSERT CASE");
 			this.connect();
-			String sql = "INSERT INTO CaseTable ( Employee_Id, numberOfDayInvoice,startDate,endDate,payementDate,payementDueDate,number,client,position,status,otherConditions,project,amountTaxFree,amountWithTax,dailyRate,dailyIndemnity,country,rev_code) "
-					+ "VALUES ('"+c.geteRef()+"','"+c.getNumberOfDayInvoice()+"','"+c.getStartDate()+"','"+c.getEndDate()+"','"+c.getPaymentDate()+"','"+c.getPaymentDueDate()+"','"+c.getNumber()+"','"+c.getClient()+"','"+c.getPositon()+"','"+c.getStatus()+"','"+c.getOtherConditions()+"','"+c.getProject()+"','"+c.getAmountTaxFree()+"','"+c.getAmountWithTax()+"','"+c.getDailyRate()+"','"+c.getDailyIndemnity()+"','"+c.getCountry()+"','R');";
+			String sql = "INSERT INTO CaseTable ( Employee_Id, numberOfDayInvoice,startDate,endDate,payementDate,payementDueDate,number,client,position,status,otherConditions,project,amountTaxFree,amountWithTax,dailyRate,dailyIndemnity,country,rev_code,historise) "
+					+ "VALUES ('"+c.geteRef()+"','"+c.getNumberOfDayInvoice()+"','"+c.getStartDate()+"','"+c.getEndDate()+"','"+c.getPaymentDate()+"','"+c.getPaymentDueDate()+"','"+c.getNumber()+"','"+c.getClient()+"','"+c.getPositon()+"','"+c.getStatus()+"','"+c.getOtherConditions()+"','"+c.getProject()+"','"+c.getAmountTaxFree()+"','"+c.getAmountWithTax()+"','"+c.getDailyRate()+"','"+c.getDailyIndemnity()+"','"+c.getCountry()+"','R','false');";
 			if(stmt!=null){
 				try {
 					this.stmt.executeUpdate(sql);
