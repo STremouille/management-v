@@ -85,6 +85,7 @@ public class EmployeeTableModel extends AbstractTableModel{
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
+		if(employeeList.size()>0){
 		switch (columnIndex) {
 		case 0:
 			return employeeList.get(rowIndex).isAvailable();
@@ -114,6 +115,9 @@ public class EmployeeTableModel extends AbstractTableModel{
 		default:
 			return "Faux";
 		}
+		}
+		else
+			return "Empty";
 	}
 
 	@Override

@@ -109,56 +109,60 @@ public class CaseTableModel extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		if(isGeneralCase){
-			switch (columnIndex) {
-			case 0:
-				return cList.get(rowIndex).getNumber();
-			case 1:
-				return cList.get(rowIndex).getClient();
-			case 2:
-				return cList.get(rowIndex).getProject();
-			case 3:
-				return f.getEmployeeForThisCase(cList.get(rowIndex)).size();
-			default:
-				return "FAUX!";
+		if(cList.size()>0){
+			if(isGeneralCase){
+				switch (columnIndex) {
+				case 0:
+					return cList.get(rowIndex).getNumber();
+				case 1:
+					return cList.get(rowIndex).getClient();
+				case 2:
+					return cList.get(rowIndex).getProject();
+				case 3:
+					return f.getEmployeeForThisCase(cList.get(rowIndex)).size();
+				default:
+					return "FAUX!";
+				}
+			} else{
+				switch (columnIndex) {
+				case 0:
+					return cList.get(rowIndex).getNumber();
+				case 1:
+					return cList.get(rowIndex).getClient();
+				case 2:
+					return cList.get(rowIndex).getProject();
+				case 3:
+					return cList.get(rowIndex).getPositon();
+				case 4:
+					return cList.get(rowIndex).getStatus();
+				case 5:
+					return cList.get(rowIndex).getStartDate()*10000.0;
+				case 6:
+					return cList.get(rowIndex).getEndDate()*10000.0;
+				/*case 7:
+					return cList.get(rowIndex).getNumberOfDayInvoice();*/
+				case 7:
+					return cList.get(rowIndex).getDailyRate();
+				case 8:
+					return cList.get(rowIndex).getDailyIndemnity();
+				case 9:
+					return cList.get(rowIndex).getOtherConditions();
+				case 10:
+					return cList.get(rowIndex).getCountry();
+				/*case 11:
+					return cList.get(rowIndex).getPaymentDueDate()*10000.0;
+				case 12:
+					return cList.get(rowIndex).getPaymentDate()*10000.0;
+				case 13:
+					return cList.get(rowIndex).getAmountTaxFree();
+				case 14:
+					return cList.get(rowIndex).getAmountWithTax();*/
+				default:
+					return "FAUX!";
+				}
 			}
-		} else{
-			switch (columnIndex) {
-			case 0:
-				return cList.get(rowIndex).getNumber();
-			case 1:
-				return cList.get(rowIndex).getClient();
-			case 2:
-				return cList.get(rowIndex).getProject();
-			case 3:
-				return cList.get(rowIndex).getPositon();
-			case 4:
-				return cList.get(rowIndex).getStatus();
-			case 5:
-				return cList.get(rowIndex).getStartDate()*10000.0;
-			case 6:
-				return cList.get(rowIndex).getEndDate()*10000.0;
-			/*case 7:
-				return cList.get(rowIndex).getNumberOfDayInvoice();*/
-			case 7:
-				return cList.get(rowIndex).getDailyRate();
-			case 8:
-				return cList.get(rowIndex).getDailyIndemnity();
-			case 9:
-				return cList.get(rowIndex).getOtherConditions();
-			case 10:
-				return cList.get(rowIndex).getCountry();
-			/*case 11:
-				return cList.get(rowIndex).getPaymentDueDate()*10000.0;
-			case 12:
-				return cList.get(rowIndex).getPaymentDate()*10000.0;
-			case 13:
-				return cList.get(rowIndex).getAmountTaxFree();
-			case 14:
-				return cList.get(rowIndex).getAmountWithTax();*/
-			default:
-				return "FAUX!";
-			}
+		} else {
+			return "Empty";
 		}
 	}
 

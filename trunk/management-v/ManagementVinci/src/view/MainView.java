@@ -174,6 +174,7 @@ public class MainView {
 			employeeListTable.setFont(new Font(ManagementVinci.fontName, Font.PLAIN, ManagementVinci.fontSize));
 			employeeListTable.getTableHeader().setFont(new Font(ManagementVinci.fontName, Font.BOLD, ManagementVinci.fontSize));
 			employeeListTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+			employeeListTable.setAutoCreateRowSorter(true);
 			employeeScrollPane = new JScrollPane(employeeListTable);
 		}
 		if(factory!=null && caseList != null){
@@ -184,6 +185,7 @@ public class MainView {
 			caseListTable.setFont(new Font(ManagementVinci.fontName, Font.PLAIN, ManagementVinci.fontSize));
 			caseListTable.getTableHeader().setFont(new Font(ManagementVinci.fontName, Font.BOLD, ManagementVinci.fontSize));
 			caseListTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+			caseListTable.setAutoCreateRowSorter(true);
 			caseScrollPanel = new JScrollPane(caseListTable);
 		}
 			

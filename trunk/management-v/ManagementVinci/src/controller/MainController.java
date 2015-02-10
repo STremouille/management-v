@@ -72,10 +72,10 @@ public class MainController {
 	
 	public void updateEmployeeList(){
 		view.refreshTree();
-		if(!view.getSearchCriteria().equals(INIT_TEXT)){
+		if(!(view.getSearchCriteria().equals(INIT_TEXT)||view.getSearchCriteria().equals(""))){
 			view.getEmployeeTableModel().fireTableDataChanged(view.getSearchCriteria());
 		} else {
-			view.getEmployeeTableModel().fireTableDataChanged("");
+			view.getEmployeeTableModel().fireTableDataChanged("%");
 		}
 		if(view.getTabbedPane().getSelectedIndex()==1)
 			view.setElementsNumber(view.getEmployeeTableModel().getEmployeeList().size());
@@ -83,10 +83,10 @@ public class MainController {
 	
 	public void updateCaseList() {
 		view.refreshTree();
-		if(!view.getSearchCriteria().equals(INIT_TEXT)){
+		if(!(view.getSearchCriteria().equals(INIT_TEXT)||view.getSearchCriteria().equals(""))){
 			view.getCaseListTableModel().fireTableDataChanged(view.getSearchCriteria());
 		} else {
-			view.getCaseListTableModel().fireTableDataChanged("");
+			view.getCaseListTableModel().fireTableDataChanged("%");
 		}
 		if(view.getTabbedPane().getSelectedIndex()==2)
 			view.setElementsNumber(view.getCaseListTableModel().getCaseList().size());
@@ -94,10 +94,10 @@ public class MainController {
 	
 	public void updateResumeList(){
 		view.refreshTree();
-		if(!view.getSearchCriteria().equals(INIT_TEXT)){
+		if(!(view.getSearchCriteria().equals(INIT_TEXT)||view.getSearchCriteria().equals(""))){
 			view.getResumeTableModel().fireTableDataChanged(view.getSearchCriteria());
 		} else {
-			view.getResumeTableModel().fireTableDataChanged("");
+			view.getResumeTableModel().fireTableDataChanged("%");
 		}
 		if(view.getTabbedPane().getSelectedIndex()==3)
 			view.setElementsNumber(view.getResumeTableModel().getCaseList().size());
@@ -170,7 +170,7 @@ public class MainController {
 			            table.clearSelection();
 			        }
 
-			        final int rowindex = table.getSelectedRow();
+			        final int rowindex = table.convertRowIndexToModel(table.getSelectedRow());
 			        if (rowindex < 0)
 			            return;
 			        if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
@@ -233,7 +233,7 @@ public class MainController {
 	            tableC.clearSelection();
 	        }
 
-	        final int rowindexC = tableC.getSelectedRow();
+	        final int rowindexC =  tableC.convertRowIndexToModel(tableC.getSelectedRow());
 	        if (rowindexC < 0)
 	            return;
 	        if (e.isPopupTrigger() && e.getComponent() instanceof JTable ) {
@@ -346,10 +346,12 @@ public class MainController {
 					break;
 				case 1:
 					view.setElementsNumber(factory.getEmployees("").size());
+					view.getCaseListTableModel().fireTableDataChanged("");
 					enableToolbar(true);
 					break;
 				case 2:
 					view.setElementsNumber(factory.getCases("").size());
+					view.getEmployeeTableModel().fireTableDataChanged("");
 					enableToolbar(true);
 					break;
 				case 3:
@@ -359,6 +361,7 @@ public class MainController {
 				default:
 					break;
 				}
+                
             }
 		}
 		
